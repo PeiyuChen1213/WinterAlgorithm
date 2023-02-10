@@ -19,16 +19,16 @@ public class L3 {
         }
         while (l < s.length()) {
             //右侧没有重复扩展右侧的窗口
-            if (r+1<s.length()&&dup[s.charAt(r+1)]==0){
+            if (r + 1 < s.length() && dup[s.charAt(r + 1)] == 0) {
                 r++;
                 //记录扩展的字串
                 dup[s.charAt(r)]++;
-            }else {
+            } else {
                 // 右侧已经到头的情况下 或者出现重复
                 dup[s.charAt(l)]--;
                 l++;
             }
-            res = Math.max(res,r-l+1);
+            res = Math.max(res, r - l + 1);
         }
         return res;
     }
